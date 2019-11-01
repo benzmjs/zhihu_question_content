@@ -1,0 +1,2 @@
+# zhihu_question_content
+查询zhihu_question_url写入MySQL的url发送请求，使用scraqy实现增量爬虫，将爬取下来的问答数据通过sha1加密后对比redis数据库，如果redis数据库中不存在就将当前文章sha1加密后写入redis数据库中，并对当前文章进行原创度分析，将原创度等级与文章标题拼接，写入MySQL数据库中；
