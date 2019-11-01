@@ -95,3 +95,9 @@ REDIS_URL = 'redis://122.114.178.3'
 REDIS_PARAMS = {
     'db': 2
 }
+
+MYSQL_HOST = '122.114.121.137'
+MYSQL_USER = 'ceshi_txglcz_com'
+MYSQL_PASSWORD = 'jYRaEb3Mw4HKnDEy'
+MYSQL_PORT = 3306
+MYSQL_TABLE = 'ceshi_txglcz_com'
