@@ -15,7 +15,7 @@ SPIDER_MODULES = ['zhihu_question_content.spiders']
 NEWSPIDER_MODULE = 'zhihu_question_content.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-# USER_AGENT = 'zhihu_question_content (+http://www.yourdomain.com)'
+USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -96,8 +96,13 @@ REDIS_PARAMS = {
     'db': 2
 }
 
-MYSQL_HOST = '122.114.121.137'
-MYSQL_USER = 'ceshi_txglcz_com'
-MYSQL_PASSWORD = 'jYRaEb3Mw4HKnDEy'
-MYSQL_PORT = 3306
-MYSQL_TABLE = 'ceshi_txglcz_com'
+DATA_MYSQL_HOST = '122.114.121.137'
+DATA_MYSQL_USER = 'ceshi_txglcz_com'
+DATA_MYSQL_PASSWORD = 'jYRaEb3Mw4HKnDEy'
+DATA_MYSQL_PORT = 3306
+DATA_MYSQL_TABLE = 'ceshi_txglcz_com'
+
+URL_MYSQL_HOST = '122.114.178.3'
+URL_MYSQL_USER = 'mjs'
+URL_MYSQL_PASSWORD = '123456'
+URL_MYSQL_TABLE = 'zhurl'
