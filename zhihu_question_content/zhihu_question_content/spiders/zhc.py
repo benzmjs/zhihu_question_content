@@ -17,5 +17,20 @@ class ZhcSpider(scrapy.Spider):
     def parse(self, response):
         dict_data = json.loads(response.body.decode())
         question_list = dict_data["data"]
+        for every_question in question_list:
+            tagged_content = every_question["content"]
+            labeled = re.compile(r'<[^>]+>', re.S)
+            unlabeled_content = labeled.sub('', tagged_content)
+            title = every_question["question"]["title"]
+            after_sha1_content = self.sha1(unlabeled_content)
+
+
+
+    def sha1(self, before_sha_unlabeled_content):
+        sha1obj = hashlib.sha1()
+        sha1obj.update(before_sha_unlabeled_content.encode('utf-8'))
+        after_sha_unlabeled_content = sha1obj.hexdigest()
+        return after_sha_unlabeled_content
+
 
 
