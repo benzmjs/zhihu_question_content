@@ -93,7 +93,7 @@ LOG_LEVEL = "WARNING"
 # SCHEDULER_PERSIST = True
 # REDIS_URL = 'redis://122.114.178.3:6379'
 # REDIS_PARAMS = {
-#     'db': 2,
+#     'db': 1,
 #     'password': '123456',
 # }
 
@@ -111,4 +111,4 @@ URL_MYSQL_TABLE = 'zhurl'
 THIRD_REDIS_HOST = '122.114.178.3'
 THIRD_REDIS_PORT = 6379
 THIRD_REDIS_PASSWORD = '123456'
-THIRD_REDIS_DB = '3'
+THIRD_REDIS_DB = '2'

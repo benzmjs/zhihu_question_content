@@ -3,6 +3,7 @@ import scrapy
 import json
 import re
 import hashlib
+import random
 from zhihu_question_content.select_url.select_url import Select_Mysql
 from zhihu_question_content.connect_redis.connect_redis import ConnectRedis
 
@@ -23,8 +24,16 @@ class ZhcSpider(scrapy.Spider):
             unlabeled_content = labeled.sub('', tagged_content)
             title = every_question["question"]["title"]
             after_sha1_content = self.sha1(unlabeled_content)
-
-
+            if not self.estimate_exists(after_sha1_content):
+                # 判断原创性，写入数据库
+                ten_word_list = self.random_choice_ten_word(unlabeled_content)
+                self.judge_content_whether_original(ten_word_list)
+            next_url = dict_data["paging"]["next"]
+            if not dict_data["paging"]["is_end"]:
+                yield scrapy.Request(
+                    next_url,
+                    callback=self.parse
+                )
 
     def sha1(self, before_sha_unlabeled_content):
         sha1obj = hashlib.sha1()
@@ -42,3 +51,20 @@ class ZhcSpider(scrapy.Spider):
         else:
             return True
 
+    def random_choice_ten_word(self, unlabeled_content):
+        count = 0
+        ten_word_list = []
+        while count < 10:
+            start_index = random.randint(0, len(unlabeled_content) - 25)
+            every_str_word = unlabeled_content[start_index:start_index + 25]
+            ten_word_list.append(every_str_word)
+            count += 1
+        return ten_word_list
+
+    def judge_content_whether_original(self,ten_word_list):
+        i=0
+        for every_one_word in ten_word_list:
+            print(every_one_word)
+            print(i)
+            i+=1
+        print("==="*60)
