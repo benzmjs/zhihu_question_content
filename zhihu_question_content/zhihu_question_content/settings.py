@@ -87,14 +87,15 @@ ROBOTSTXT_OBEY = False
 # HTTPCACHE_DIR = 'httpcache'
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
-
-DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
-SCHEDULER = "scrapy_redis.scheduler.Scheduler"
-SCHEDULER_PERSIST = True
-REDIS_URL = 'redis://122.114.178.3'
-REDIS_PARAMS = {
-    'db': 2
-}
+LOG_LEVEL = "WARNING"
+# DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+# SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+# SCHEDULER_PERSIST = True
+# REDIS_URL = 'redis://122.114.178.3:6379'
+# REDIS_PARAMS = {
+#     'db': 2,
+#     'password': '123456',
+# }
 
 DATA_MYSQL_HOST = '122.114.121.137'
 DATA_MYSQL_USER = 'ceshi_txglcz_com'
@@ -106,3 +107,8 @@ URL_MYSQL_HOST = '122.114.178.3'
 URL_MYSQL_USER = 'mjs'
 URL_MYSQL_PASSWORD = '123456'
 URL_MYSQL_TABLE = 'zhurl'
+
+THIRD_REDIS_HOST = '122.114.178.3'
+THIRD_REDIS_PORT = 6379
+THIRD_REDIS_PASSWORD = '123456'
+THIRD_REDIS_DB = '3'
