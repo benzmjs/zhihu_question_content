@@ -32,5 +32,13 @@ class ZhcSpider(scrapy.Spider):
         after_sha_unlabeled_content = sha1obj.hexdigest()
         return after_sha_unlabeled_content
 
-
+    def estimate_exists(self, after_sha1_content):
+        content_redis_object = ConnectRedis()
+        start_count = content_redis_object.connect_redis.scard('content')
+        content_redis_object.connect_redis.sadd('content', after_sha1_content)
+        end_count = content_redis_object.connect_redis.scard('content')
+        if start_count != end_count:
+            return False
+        else:
+            return True
 
