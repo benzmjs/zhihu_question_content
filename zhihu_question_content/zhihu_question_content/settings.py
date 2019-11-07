@@ -63,9 +63,10 @@ ROBOTSTXT_OBEY = False
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-# ITEM_PIPELINES = {
-#    'zhihu_question_content.pipelines.ZhihuQuestionContentPipeline': 300,
-# }
+ITEM_PIPELINES = {
+    'zhihu_question_content.pipelines.ZhihuQuestionContentPipeline': 299,
+    # 'zhihu_question_content.pipelines.SaveImagePipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -88,14 +89,16 @@ ROBOTSTXT_OBEY = False
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 LOG_LEVEL = "WARNING"
-# DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
-# SCHEDULER = "scrapy_redis.scheduler.Scheduler"
-# SCHEDULER_PERSIST = True
-# REDIS_URL = 'redis://122.114.178.3:6379'
-# REDIS_PARAMS = {
-#     'db': 1,
-#     'password': '123456',
-# }
+
+# URL_MYSQL_HOST = '122.114.178.3'
+# URL_MYSQL_USER = 'mjs'
+# URL_MYSQL_PASSWORD = '123456'
+# URL_MYSQL_TABLE = 'zhurl'
+
+THIRD_REDIS_HOST = '122.114.178.3'
+THIRD_REDIS_PORT = 7777
+THIRD_REDIS_PASSWORD = 'v5jK8DJNprbo6siQIv'
+THIRD_REDIS_DB = '0'
 
 DATA_MYSQL_HOST = '122.114.121.137'
 DATA_MYSQL_USER = 'ceshi_txglcz_com'
@@ -103,12 +106,6 @@ DATA_MYSQL_PASSWORD = 'jYRaEb3Mw4HKnDEy'
 DATA_MYSQL_PORT = 3306
 DATA_MYSQL_TABLE = 'ceshi_txglcz_com'
 
-URL_MYSQL_HOST = '122.114.178.3'
-URL_MYSQL_USER = 'mjs'
-URL_MYSQL_PASSWORD = '123456'
-URL_MYSQL_TABLE = 'zhurl'
+COOKIE = "tt_webid=6740907262875321864; WEATHER_CITY=%E5%8C%97%E4%BA%AC; tt_webid=6740907262875321864; csrftoken=064366b260ef57098f50d408699e6a4a; _ga=GA1.2.757895929.1569548594; WIN_WH=375_812; UM_distinctid=16d94b0d176482-0ded3f44daf00f-6a12167a-1fa400-16d94b0d1774f3; CNZZDATA1259612802=1915830950-1570154940-https%253A%252F%252Fwww.toutiao.com%252F%7C1570344032; uuid='w:d76a1d08349142bc83bb5098ba066f1e'; __tasessionId=bm0s5te8y1571707377111; s_v_web_id=d00ce486f759d046acaf10441e8ae6a0"
 
-THIRD_REDIS_HOST = '122.114.178.3'
-THIRD_REDIS_PORT = 6379
-THIRD_REDIS_PASSWORD = '123456'
-THIRD_REDIS_DB = '2'
+# IMAGES_STORE = 'C:\\Users\\Administrator\\Desktop\\image'

@@ -1,5 +1,5 @@
 import pymysql
-from zhihu_question_content.settings import URL_MYSQL_HOST, URL_MYSQL_USER, URL_MYSQL_PASSWORD, URL_MYSQL_TABLE
+# from zhihu_question_content.settings import URL_MYSQL_HOST, URL_MYSQL_USER, URL_MYSQL_PASSWORD, URL_MYSQL_TABLE
 
 
 class Select_Mysql:

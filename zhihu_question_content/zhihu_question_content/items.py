@@ -11,4 +11,9 @@ import scrapy
 class ZhihuQuestionContentItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    unlabeled_content = scrapy.Field()
+    tagged_content = scrapy.Field()
+    title = scrapy.Field()
+    marked = scrapy.Field()
+    content_image_url = scrapy.Field()
+    final_content = scrapy.Field()
